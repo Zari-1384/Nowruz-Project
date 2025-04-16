@@ -11,8 +11,11 @@ public class Lyric {
     public List<String> getFull_Lyric() {
         return Full_Lyric;
     }
+    public void setFull_Lyric(List<String> Full_Lyric) {
+        this.Full_Lyric.addAll(Full_Lyric);
+    }
 
-    public void setFull_Lyric()
+    public void WriteFull_Lyric()
     {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter Lyric (if you want to end writing, press 0 after enter) : ");
@@ -27,20 +30,30 @@ public class Lyric {
 
     }
 
-    public void show_lyric(List<String> Lyric)
+    public void show_lyric()
     {
         int line = 1;
         System.out.println("Song's lyric : \n");
-        for (String s : Lyric) {
-            System.out.println(line + s);
+        for (String s : Full_Lyric) {
+            System.out.println(line + " " + s);
             line++;
         }
     }
 
-    public void EditLyric(int line, String suggested_lyric,List<String> Lyric)
+    public void EditLyric(int line, String suggested_lyric)
     {
-        Lyric.remove(line - 1);
-        Lyric.add(line - 1, suggested_lyric);
+        Full_Lyric.remove(line - 1);
+        Full_Lyric.add(line - 1, suggested_lyric);
+    }
+
+    public int LyricLine_Counter(List<String> Lyric)
+    {
+        int line = 1;
+        for(String s : Lyric)
+        {
+            line++;
+        }
+        return line;
     }
 
 }

@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cacc190-c361-44cb-b6eb-7fcf5b630945" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genius/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/genius/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genius/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/genius/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Finder.java" beforeDir="false" afterPath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Finder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Lyric.java" beforeDir="false" afterPath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Lyric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Suggest.java" beforeDir="false" afterPath="$PROJECT_DIR$/genius/src/main/java/org/example/Objects/Suggest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genius/src/main/java/org/example/Users/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/genius/src/main/java/org/example/Users/Artist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genius/src/main/java/org/example/Users/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/genius/src/main/java/org/example/Users/Member.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,22 +36,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/APhomew/Nowruz-Project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/APhomew/Nowruz-Project/genius",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,6 +75,8 @@
       <workItem from="1744060989537" duration="59000" />
       <workItem from="1744061061522" duration="49000" />
       <workItem from="1744063445675" duration="35000" />
+      <workItem from="1744568513647" duration="5000" />
+      <workItem from="1744581896079" duration="24000" />
     </task>
     <servers />
   </component>

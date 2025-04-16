@@ -1,33 +1,51 @@
 package org.example.Objects;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class Album {
 
     private String name;
-    private int date;
+    private Date date;
     private String artistUsername;
     private List<Song> AlbumSongs = new ArrayList<>();
 
-    public Album(String name, int date, String artistUsername)
+    public Album(String name, Date date, String artistUsername)
     {
         this.name = name;
         this.date = date;
         this.artistUsername = artistUsername;
     }
 
-    public void addSong(String title, String genre, int date)
+    public void addSong(String title, String genre)
     {
 
-        Song song = new Song(title, this.getArtistUsername(), this.name, genre, date);
+        Song song = new Song(title, this.getArtistUsername(), this.name, genre, new Date());
 
         Lyric SongLyric = new Lyric();
-        SongLyric.setFull_Lyric();
+        SongLyric.WriteFull_Lyric();
         song.setLyric(SongLyric);
 
         AlbumSongs.add(song);
+    }
+
+    public void Show_Album()
+    {
+        System.out.println("Name: " + name + "\nArtist: " + artistUsername + "\ndate released: " + date + "\nAlbum songs: ");
+        Show_SongsList(AlbumSongs);
+    }
+
+    public void Show_SongsList(List<Song> Songs)
+    {
+        int line = 1;
+        System.out.println("Album songs list : ");
+        for (Song song : Songs)
+        {
+            System.out.println(line + song.getTitle());
+            line++;
+        }
     }
 
     public void deletSong(int index)
@@ -35,7 +53,7 @@ public class Album {
         AlbumSongs.remove(index - 1);
     }
 
-    public void EditSongInfo(int SongIndex, String title, String artistUsername, String genre, String albumName, int date) {
+    public void EditSongInfo(int SongIndex, String title, String artistUsername, String genre, String albumName, Date date) {
         String answer;
         boolean available = false;
         Scanner input = new Scanner(System.in);
@@ -76,15 +94,15 @@ public class Album {
     {
         Scanner input = new Scanner(System.in);
 
-        AlbumSongs.get(SongIndex).getLyric().show_lyric(AlbumSongs.get(SongIndex).getLyric().getFull_Lyric());
+        AlbumSongs.get(SongIndex).getLyric().show_lyric();
         System.out.println("Which line you want to edit ?");
         int line = input.nextInt();
         System.out.println("What you want to write instead?");
         String suggested = input.nextLine();
-        AlbumSongs.get(SongIndex).getLyric().EditLyric(line, suggested, AlbumSongs.get(SongIndex).getLyric().getFull_Lyric());
+        AlbumSongs.get(SongIndex).getLyric().EditLyric(line, suggested);
 
         System.out.println("Song's new lyric : ");
-        AlbumSongs.get(SongIndex).getLyric().show_lyric(AlbumSongs.get(SongIndex).getLyric().getFull_Lyric());
+        AlbumSongs.get(SongIndex).getLyric().show_lyric();
 
         System.out.println("is the song's new lyric accepted? (yes/no)");
         suggested = input.nextLine();
@@ -103,8 +121,13 @@ public class Album {
         return name;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
+    }
+
+    public List<Song> getAlbumSongs()
+    {
+        return AlbumSongs;
     }
 
     public String getArtistUsername() {
@@ -119,7 +142,7 @@ public class Album {
         this.name = name;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

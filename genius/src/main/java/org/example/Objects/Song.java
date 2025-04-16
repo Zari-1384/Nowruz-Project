@@ -1,5 +1,7 @@
 package org.example.Objects;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Song {
@@ -8,16 +10,29 @@ public class Song {
     private String artistUsername;
     private String album;
     private String genre;
-    private int date;
-    private int view;
+    private Date date;
+    private int view = 0;
     private Lyric lyric;
+    private List<Comment> Comments = new ArrayList<>();
 
-    public Song(String title, String artistUsername, String album, String genre, int date) {
+    public Song(String title, String artistUsername, String album, String genre, Date date) {
         this.title = title;
         this.artistUsername = artistUsername;
         this.album = album;
         this.genre = genre;
         this.date = date;
+    }
+
+    public void Show_song()
+    {
+        System.out.println("Title: " + title + "\nArtist: " + artistUsername + "\nAlbum: " + album + "\nGenre: " + genre
+        + "\nDate: " + date + "\nView: " + view + "\nLyric: " );
+        lyric.show_lyric();
+    }
+
+    public void Add_Comment(Comment comment)
+    {
+        Comments.add(comment);
     }
 
     public String getTitle() {
@@ -40,7 +55,7 @@ public class Song {
         return genre;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -68,7 +83,7 @@ public class Song {
         this.genre = genre;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
