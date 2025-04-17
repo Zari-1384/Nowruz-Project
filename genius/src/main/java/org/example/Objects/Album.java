@@ -33,7 +33,7 @@ public class Album {
 
     public void Show_Album()
     {
-        System.out.println("Name: " + name + "\nArtist: " + artistUsername + "\ndate released: " + date + "\nAlbum songs: ");
+        System.out.println("Name: " + name + "\nArtist: " + artistUsername + "\ndate released: " + date + "\n");
         Show_SongsList(AlbumSongs);
     }
 
@@ -43,7 +43,7 @@ public class Album {
         System.out.println("Album songs list : ");
         for (Song song : Songs)
         {
-            System.out.println(line + song.getTitle());
+            System.out.println(line + " " + song.getTitle());
             line++;
         }
     }
@@ -53,19 +53,18 @@ public class Album {
         AlbumSongs.remove(index - 1);
     }
 
-    public void EditSongInfo(int SongIndex, String title, String artistUsername, String genre, String albumName, Date date) {
+    public void EditSongInfo(int SongIndex, String title, String artistUsername, String genre, String albumName) {
         String answer;
         boolean available = false;
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Song info : \nSong's name : " + AlbumSongs.get(SongIndex).getTitle() + "\nSong's artist user name : "
-        + AlbumSongs.get(SongIndex).getArtistUsername() + "\nSong's genre : " + AlbumSongs.get(SongIndex).getGenre() +
-        "\nSong's Album name : " + AlbumSongs.get(SongIndex).getAlbum() + "\nSong's date : " + AlbumSongs.get(SongIndex).getDate());
-        AlbumSongs.get(SongIndex).setTitle(title);
-        AlbumSongs.get(SongIndex).setArtistUsername(artistUsername);
-        AlbumSongs.get(SongIndex).setGenre(genre);
-        AlbumSongs.get(SongIndex).setAlbum(albumName);
-        AlbumSongs.get(SongIndex).setDate(date);
+        System.out.println("Song info : \nSong's name : " + AlbumSongs.get(SongIndex - 1).getTitle() + "\nSong's artist user name : "
+        + AlbumSongs.get(SongIndex - 1).getArtistUsername() + "\nSong's genre : " + AlbumSongs.get(SongIndex - 1).getGenre() +
+        "\nSong's Album name : " + AlbumSongs.get(SongIndex).getAlbum());
+        AlbumSongs.get(SongIndex -1).setTitle(title);
+        AlbumSongs.get(SongIndex - 1).setArtistUsername(artistUsername);
+        AlbumSongs.get(SongIndex - 1).setGenre(genre);
+        AlbumSongs.get(SongIndex -1).setAlbum(albumName);
         System.out.println("Song info edited!");
 
         System.out.println("Do you want to edit the song lyrics too? \n1.yes \n2.no");
@@ -94,15 +93,15 @@ public class Album {
     {
         Scanner input = new Scanner(System.in);
 
-        AlbumSongs.get(SongIndex).getLyric().show_lyric();
+        AlbumSongs.get(SongIndex -1).getLyric().show_lyric();
         System.out.println("Which line you want to edit ?");
         int line = input.nextInt();
         System.out.println("What you want to write instead?");
         String suggested = input.nextLine();
-        AlbumSongs.get(SongIndex).getLyric().EditLyric(line, suggested);
+        AlbumSongs.get(SongIndex - 1).getLyric().EditLyric(line, suggested);
 
         System.out.println("Song's new lyric : ");
-        AlbumSongs.get(SongIndex).getLyric().show_lyric();
+        AlbumSongs.get(SongIndex - 1).getLyric().show_lyric();
 
         System.out.println("is the song's new lyric accepted? (yes/no)");
         suggested = input.nextLine();

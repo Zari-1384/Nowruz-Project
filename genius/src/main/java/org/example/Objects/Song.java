@@ -26,13 +26,36 @@ public class Song {
     public void Show_song()
     {
         System.out.println("Title: " + title + "\nArtist: " + artistUsername + "\nAlbum: " + album + "\nGenre: " + genre
-        + "\nDate: " + date + "\nView: " + view + "\nLyric: " );
+        + "\nDate: " + date + "\nView: " + view + "\n" );
         lyric.show_lyric();
+    }
+
+    public void Show_comments()
+    {
+        if(Comments.isEmpty())
+        {
+            System.out.println("Nothing to show");
+        }
+        else
+        {
+            int line = 1;
+            System.out.println("Song's comments : \n");
+            for (Comment s : Comments) {
+                System.out.println((line) + " ");
+                s.Show_comment();
+                line++;
+            }
+        }
     }
 
     public void Add_Comment(Comment comment)
     {
         Comments.add(comment);
+    }
+
+    public void Add_View()
+    {
+        view++;
     }
 
     public String getTitle() {
@@ -61,6 +84,10 @@ public class Song {
 
     public Lyric getLyric() {
         return lyric;
+    }
+
+    public List<Comment> getComments() {
+        return Comments;
     }
 
     public void setTitle(String title) {

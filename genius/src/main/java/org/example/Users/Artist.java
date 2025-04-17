@@ -26,18 +26,18 @@ public class Artist extends User {
         System.out.println("followers : " + followers);
     }
 
-    public void Show_AlbumList(List<Album> Albums)
+    public void Show_AlbumList()
     {
         int line = 1;
         System.out.println("Artist's Albums : ");
-        for (Album a : Albums)
+        for (Album a : albums)
         {
             System.out.println(line + " " + a.getName());
             line ++;
         }
     }
 
-    public void Show_suggestList(List<Suggest> Suggests)
+    public void Show_suggestList()
     {
         int line = 1;
         System.out.println("Member's Suggests : ");
@@ -71,11 +71,10 @@ public class Artist extends User {
         Suggests.remove(index - 1);
     }
 
-    public void EditAlbumInfo(int AlbumIndex, String albumName, Date date, String artistUserName) {
+    public void EditAlbumInfo(int AlbumIndex, String albumName, String artistUserName) {
 
-        albums.get(AlbumIndex).setName(albumName);
-        albums.get(AlbumIndex).setDate(date);
-        albums.get(AlbumIndex).setArtistUsername(artistUserName);
+        albums.get(AlbumIndex - 1).setName(albumName);
+        albums.get(AlbumIndex - 1).setArtistUsername(artistUserName);
 
     }
 
@@ -100,7 +99,7 @@ public class Artist extends User {
         this.Suggests = Suggests;
     }
 
-    public List<Suggest> getSuggests() {
+    public List<Suggest> getSuggest_list() {
         return Suggests;
     }
 

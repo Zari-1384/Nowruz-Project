@@ -21,6 +21,15 @@ public class Comment {
         Replies.add(comment);
     }
 
+    public void Show_comment()
+    {
+        for(String str : comment)
+        {
+            System.out.println(str);
+        }
+        System.out.println(" By : " + Username + " in : " + date);
+    }
+
     public void Show_replies(List<Comment> replies)
     {
         int line = 1;

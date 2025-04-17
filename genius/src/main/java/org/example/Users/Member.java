@@ -32,14 +32,13 @@ public class Member extends User {
         a.setFollowers(a.getFollowers() - 1);
     }
 
-    public void ShowFollowings()
-    {
+    public void ShowFollowings(){
         int line = 1;
-        for (String FollowingArtist : FollowingArtists)
-        {
+        for (String FollowingArtist : FollowingArtists) {
             System.out.println(line + FollowingArtist);
             line++;
         }
+        System.out.println("\n");
     }
 
     public void AddComment(Song song)
@@ -172,7 +171,7 @@ public class Member extends User {
         System.out.println("the atrists you follow : ");
         if(FollowingArtists.isEmpty())
         {
-            System.out.println("you are not following any artist");
+            System.out.println("you are not following any artist" + "\n");
         }
         else
         {
